@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- bootstrap files  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+        integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- alpine lib  -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Olbac | details</title>
+    <link rel="icon" href="image/gaenral/ico.png" type="image/jpg" sizes="16x16">
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h1 id="modal-message"></h1>
+            <img src="image/gaenral/modal-img.png" alt="modal-img">
+        </div>
+    </div>
+    <button class="scrollToTopBtn" onclick="scrollToTop()"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+    <div>
+        <div class="navbars ">
+            <div class="mobil-add-card">
+                <span class="quantity">quantity</span>
+                <span class="quantity-num">2</span>
+                <button class="add-to" onclick="showToast()"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add To
+                    Cart</button>
+            </div>
+            <a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+            <a href="#"><i class="fa fa-minus" aria-hidden="true"></i>Deals</a>
+            <a href="profile.html"><i class="fa fa-user" aria-hidden="true"></i> My Account</a>
+            <a href="favorite-shop.html"> <i class="fa fa-star-o roud1" aria-hidden="true"></i>Favourites</a>
+            <a href="cart-shop.html"> <i class="fa fa-cart-arrow-down roud2" aria-hidden="true"></i>Cart</a>
+        </div>
+    </div>
+
+    <!-- start navbar mobile -->
+    <!-- start header -->
+    <div class="alert alert-danger alert-dismissible m-0">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong class="d-flex justify-content-center">Offers Up To 50%</strong>
+    </div>
+
+    <div class="container-fluid  bg-white sticky-top z-index-2 ">
+        <div class="  head-bar container d-flex align-items-center justify-content-between position-relative ">
+            <!-- menu section -->
+            <div class="offcanvas offcanvas-start w-75" id="demo">
+                <div class="offcanvas-header">
+                    <div class="login-user">
+                        <button type="button" class="btn-close btn-menu" data-bs-dismiss="offcanvas"></button>
+                        <div>
+                            <img src="./image/header/AnyConv.com__img-user.webp" class="img-user" alt="" width="80"
+                                height="80" loading="lazy">
+                        </div>
+                        <p class="log-out">OLBAC</p>
+                        <img src="./image/header/AnyConv.com__masr.webp" alt="masr" width="20" height="13"
+                            loading="lazy">
+                        <span>عربي</span>
+                    </div>
+                </div>
+                <div class="offcanvas-body">
+                    <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> HOME</a>
+
+                    <!-- Categories Section -->
+                    <a href="#" class="toggle-content" data-target=".categories-content">
+                        <i class="fa fa-database" aria-hidden="true"></i> Categories
+                        <i class="fa fa-chevron-down arrow-icon" aria-hidden="true"></i>
+                    </a>
+                    <div class="categories-content content-section hidden">
+                        <!-- Content for Categories -->
+                        <a href="">Photography Lighting</a>
+                        <a href="">Microphones</a>
+                        <a href="product-details.html">Cameras</a>
+                        <a href="">Lenses</a>
+                        <a href="">Flashes</a>
+                        <a href="">Memory Cards</a>
+                        <a href="index-stands.html">Stands</a>
+                        <a href="">Photography Bags</a>
+                        <a href="">Photography Tent</a>
+                        <a href="">Stabilizers</a>
+                        <a href="">Batteries & Chargers</a>
+                        <a href="">Photography Backdrops</a>
+                        <a href="">Screen Monitor</a>
+                        <a href="">Triggers</a>
+                        <a href="">Flash Drive</a>
+                        <a href="">Camera Accessories</a>
+                        <a href="">Storage</a>
+                        <a href="">Battery Grip</a>
+                        <a href="">EasyCover</a>
+                        <a href="">Accessories</a>
+                    </div>
+
+                    <!-- Brands Section -->
+                    <a href="#" class="toggle-content" data-target=".brands-content">
+                        <i class="fa fa-database" aria-hidden="true"></i> Brands
+                        <i class="fa fa-chevron-down arrow-icon" aria-hidden="true"></i>
+                    </a>
+                    <div class="brands-content content-section hidden">
+                        <a href="#">Sandisk</a>
+                        <a href="#">Boya</a>
+                        <a href="#">Cameloin</a>
+                        <a href="#">fancier</a>
+                        <a href="#">Fujifilm</a>
+                        <a href="#">general</a>
+                        <a href="#">godox</a>
+                        <a href="#">lexar</a>
+                        <a href="#">nanlite</a>
+                        <a href="#">vidico</a>
+                        <a href="#">yongnuo</a>
+                        <a href="#">Sandisk</a>
+                        <a href="#">Boya</a>
+                        <a href="#">Cameloin</a>
+                        <a href="#">fancier</a>
+                        <a href="#">Fujifilm</a>
+                        <a href="#">general</a>
+                        <a href="#">godox</a>
+                        <a href="#">lexar</a>
+                        <a href="#">nanlite</a>
+                        <a href="#">vidico</a>
+                        <a href="#">yongnuo</a>
+                        <a href="#">Sandisk</a>
+                        <a href="#">Boya</a>
+                        <a href="#">Cameloin</a>
+                        <a href="#">fancier</a>
+                        <a href="#">Fujifilm</a>
+                        <a href="#">general</a>
+                        <a href="#">godox</a>
+                        <a href="#">lexar</a>
+                        <a href="#">nanlite</a>
+                        <a href="#">vidico</a>
+                        <a href="#">yongnuo</a>
+                    </div>
+
+                    <a href="Contact-Us.html"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Contact
+                        Us</a>
+                    <a href=""><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Contact Us A Brand Or
+                        Seller</a>
+                    <a href="About-Us.html"><i class="fa fa-info-circle" aria-hidden="true"></i> About Us</a>
+                    <a href=""><i class="fa fa-briefcase" aria-hidden="true"></i> Careers</a>
+
+                    <!-- Social Media Icons -->
+                    <div class="icon-menu">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="menu-section position-absolute" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                    <a href="#" class="te-dark"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Logo Section -->
+            <div class="align-items-center logo-section">
+                <img src="image/header/AnyConv.com__logo%20(1).webp" alt="Logo" class="me-2" width="150" height="63"
+                    loading="lazy" />
+            </div>
+            <div class="align-items-center logo-sec">
+                <img src="image/header/AnyConv.com__LOGO-MOBILE.webp" alt="Logo" class="me-2" width="40" height="40"
+                    loading="lazy" />
+            </div>
+
+            <!-- Search Bar -->
+            <div class="flex-grow-1 mx-3 position-relative">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" class="form-control search-bar" placeholder="   Search Here..." />
+            </div>
+
+            <!-- Navigation Icons -->
+            <div class=" deal-logos d-flex align-items-center navigation-icons ">
+                <img class="deal-zone" src="image/gaenral/dealzone_LE_auto_x2.jpg" alt="zone" width="100" height="50"
+                    loading="lazy">
+
+
+                <a href=""><img class="masr" src="image/gaenral/mas3.png" alt="Flag" width="70" height="74"
+                        loading="lazy" /></a>
+
+
+                <div class="icon-bar">
+                    <button class="position-relative">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                        <a href="cart-shop.html" class="text-dark"><i class="fa fa-shopping-cart icon-haed"></i></a>
+                    </button>
+
+                    <a href="favorite-shop.html" class="text-dark"><i class="fa fa-heart icon-haed"></i></a>
+
+                    <div class="user-modal position-relative">
+                        <a href="#" class="text-dark confirm-email" data-bs-target="#exampleModalToggle2"
+                            data-bs-toggle="modal">
+                            <img src="image/gaenral/nmed.jpg" alt="" srcset="" class="user-img">
+                            <i class="fa fa-user icon-haed"></i>
+                        </a>
+
+
+                        <ul class="user-modal-info">
+                            <div class="header-popup">
+                                <img src="image/gaenral/cover.png" alt="" width="265" height="100">
+                            </div>
+                            <div class="img-popup">
+                                <img src="image/gaenral/nmed.jpg" alt="named" height="100" width="100">
+                                <a href="profile.html"> Khaled E_lbeah</a>
+                            </div>
+                            <div class="popup-links">
+                                <div class="links">
+
+                                    <li><a href="My-orders.html"> <i class="fa fa-shopping-cart"
+                                                aria-hidden="true"></i>My Orders</a>
+                                    </li>
+                                    <li><a href="About-Us.html"><i class="fa fa-info-circle"
+                                                aria-hidden="true"></i>About Us</a>
+                                    </li>
+                                    <li><a href="Contact-Us.html"><i class="fa fa-phone" aria-hidden="true"></i>Contact
+                                            Us</a></li>
+                                    <li><a href=""><i class="fa fa-cog" aria-hidden="true"></i>settins</a></li>
+                                    <a href="profile.html" class="s-out"><i class="fa fa-sign-out"
+                                            aria-hidden="true"></i>Log-out</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- start nav-bar  -->
+    <nav class="navbar navbar-expand-sm container-fluid   ">
+        <div class="container  ">
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">HOME</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="product-details.html">CAMERAS
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index-stands.html">STANDS
+                        </a>
+                    </li>
+                    <li class="nav-item">
+
+                </ul>
+            </div>
+        </div>
+        </div>
+
+    </nav>
+    <!-- end nav-bar  -->
+    <!-- end header  -->
+    <!--  start product-details-->
+    <div class="product-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <p class="product-title-image mt-4 ">Zhiyun MOLUS G60 Bi-Color Pocket COB Monolight</p>
+                    <div class="product-images-details">
+                        <div class="row">
+                            <div class="swiper-mobile-card">
+
+                                <div class="mobile-swiper " style="overflow: hidden;">
+                                    <div class="swiper-wrapper">
+
+                                        <div class="swiper-slide ">
+                                            <img src="image/gaenral/cam.webp" alt="Slide 1" width="100%" height="273"
+                                                loading="lazy">
+                                        </div>
+                                        <div class="swiper-slide ">
+                                            <img src="image/gaenral/6609500d8f4af_1679302361_IMG_1943759.webp"
+                                                alt="Slide 2" width="100%" height="273" loading="lazy">
+                                        </div>
+                                        <div class="swiper-slide ">
+                                            <img src="image/gaenral/760.webp" alt="Slide 3" width="100%" height="273"
+                                                loading="lazy">
+                                        </div>
+                                        <div class="swiper-slide ">
+                                            <img src="image/gaenral/cam.webp" alt="Slide 4" width="100%" height="273"
+                                                loading="lazy">
+                                        </div>
+                                        <div class="swiper-slide ">
+                                            <img src="image/gaenral/61.webp" alt="Slide 5" width="100%" height="273"
+                                                loading="lazy">
+                                        </div>
+                                        <div class="swiper-slide ">
+                                            <img src="image/gaenral/61.webp" alt="Slide 6" width="100%" height="273"
+                                                loading="lazy">
+                                        </div>
+                                        <div class="swiper-slide ">
+                                            <img src="image/gaenral/61.webp" alt="Slide 7" width="100%" height="273"
+                                                loading="lazy">
+                                        </div>
+                                        <div class="swiper-slide ">
+                                            <img src="image/gaenral/61.webp" alt="Slide 7" width="100%" height="273"
+                                                loading="lazy">
+                                        </div>
+                                        <div class="swiper-slide ">
+                                            <img src="image/gaenral/61.webp" alt="Slide 8" width="100%" height="273"
+                                                loading="lazy">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+                                <div class="swiper-container" style="overflow: hidden;">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper swiper-logo-details">
+                                        <!-- Slides -->
+                                        <a href="#" class="swiper-slide"
+                                            onclick="changeImage('image/gaenral/cam.webp')">
+                                            <img src="image/gaenral/cam.webp" alt="PHOTOGRAPHY LIGHTING"
+                                                class="new-swiper-details" loading="lazy" width="50" height="50">
+                                        </a>
+                                        <a href="#" class="swiper-slide"
+                                            onclick="changeImage('image/gaenral/6609500d8f4af_1679302361_IMG_1943759.webp')">
+                                            <img src="image/gaenral/6609500d8f4af_1679302361_IMG_1943759.webp"
+                                                alt="PHOTOGRAPHY LIGHTING" class="new-swiper-details" loading="lazy"
+                                                width="50" height="50">
+                                        </a>
+                                        <a href="#" class="swiper-slide"
+                                            onclick="changeImage('image/gaenral/760.webp')">
+                                            <img src="image/gaenral/760.webp" alt="PHOTOGRAPHY LIGHTING"
+                                                class="new-swiper-details" loading="lazy" width="50" height="50">
+                                        </a>
+                                        <a href="#" class="swiper-slide"
+                                            onclick="changeImage('image/gaenral/cam.webp')">
+                                            <img src="image/gaenral/cam.webp" alt="PHOTOGRAPHY LIGHTING"
+                                                class="new-swiper-details" loading="lazy" width="50" height="50">
+                                        </a>
+                                        <a href="#" class="swiper-slide" onclick="changeImage('image/gaenral/61.webp')">
+                                            <img src="image/gaenral/61.webp" alt="PHOTOGRAPHY LIGHTING"
+                                                class="new-swiper-details" loading="lazy" width="50" height="50">
+                                        </a>
+                                        <a href="#" class="swiper-slide" onclick="changeImage('image/gaenral/61.webp')">
+                                            <img src="image/gaenral/61.webp" alt="PHOTOGRAPHY LIGHTING"
+                                                class="new-swiper-details" loading="lazy" width="50" height="50">
+                                        </a>
+                                        <a href="#" class="swiper-slide" onclick="changeImage('image/gaenral/62.webp')">
+                                            <img src="image/gaenral/62.webp " alt="PHOTOGRAPHY LIGHTING"
+                                                class="new-swiper-details" loading="lazy" width="50" height="50">
+                                        </a>
+                                        <a href="#" class="swiper-slide"
+                                            onclick="changeImage('image/gaenral/cam.webp')">
+                                            <img src="image/gaenral/cam.webp" alt="PHOTOGRAPHY LIGHTING"
+                                                class="new-swiper-details" loading="lazy" width="50" height="50">
+                                        </a>
+                                        <a href="#" class="swiper-slide"
+                                            onclick="changeImage('image/gaenral/cam.webp')">
+                                            <img src="image/gaenral/cam.webp" alt="PHOTOGRAPHY LIGHTING"
+                                                class="new-swiper-details" loading="lazy" width="50" height="50">
+                                        </a>
+                                        <a href="#" class="swiper-slide" onclick="changeImage('image/gaenral/61.webp')">
+                                            <img src="image/gaenral/61.webp" alt="PHOTOGRAPHY LIGHTING"
+                                                class="new-swiper-details" loading="lazy" width="50" height="50">
+                                        </a>
+                                        <a href="#" class="swiper-slide" onclick="changeImage('image/gaenral/61.webp')">
+                                            <img src="image/gaenral/61.webp" alt="PHOTOGRAPHY LIGHTING"
+                                                class="new-swiper-details" loading="lazy" width="50" height="50">
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <div class="img-container" style="width: 300px; height: 300px;">
+                                <img id="image" src="image/gaenral/cam.webp" alt="Product" style="width: 100%;">
+
+                                <div id="lens" class="lens"></div>
+
+
+                                <div class="zoom-result" id="zoomResult" style="display: none;">
+                                    <img id="zoomedImage" src="image/gaenral/cam.webp">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 ">
+                    <div class="product-info">
+                        <div class="spacial-share d-flex align-items-center justify-content-between ">
+                            <div>
+                                <img src="image/gaenral/ZHIYUN.webp" alt="zhiyun" width="130" height="90">
+                            </div>
+                            <div>
+                                <div class="icon-add-card">
+
+                                    <i class="fa fa-share-alt" @click="openShare = !openShare" aria-hidden="true"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Share Link With
+                                                    </h1>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <div class="social-media a2a_kit a2a_kit_size_32 a2a_default_style  "
+                                                        x-show="openShare" x-transition>
+                                                        <!-- AddToAny BEGIN -->
+                                                        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                                                            <a class="a2a_button_facebook"></a>
+                                                            <a class="a2a_button_mastodon"></a>
+                                                            <a class="a2a_button_email"></a>
+                                                            <a class="a2a_button_whatsapp"></a>
+                                                            <a class="a2a_button_telegram"></a>
+                                                            <a class="a2a_button_facebook_messenger"></a>
+                                                            <a class="a2a_button_google_gmail"></a>
+                                                            <a class="a2a_button_skype"></a>
+                                                        </div>
+                                                        <script async
+                                                            src="https://static.addtoany.com/menu/page.js"></script>
+
+                                                        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <i class="fa fa-heart-o" id="heartIcon" aria-hidden="true"
+                                        onclick="toggleFavorite()"></i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card-info">
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="price-offer">
+                                        <p class="total-price">12,499 EGP</p>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="rate-product">
+                                        <i class="fa fa-star stars-icon "></i>
+                                        <i class="fa fa-star stars-icon "></i>
+                                        <i class="fa fa-star stars-icon "></i>
+                                        <i class="fa fa-star stars-icon "></i>
+                                        <i class="fa fa-star stars-icon "></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="available mt-2"> <span>Shipping 2-5 days based on area</span>
+                                <p class="text-bold text-success">
+                                    <img src="image/gaenral/freee_shipping_en.webp" alt="free" width="200" height="40">
+                                </p>
+                            </div>
+                            <div class="memory-card">
+                                <div class="memory-name">
+                                    <p>Capacity</p>
+                                </div>
+                                <div class="memory-num">
+                                    <p class="active">64 GM</p>
+                                    <p class="gb128">128 GB</p>
+                                </div>
+                                <div class="mt-2 mb-4">
+                                    <div class="swiper-add" style=" overflow: hidden;">
+                                        <!-- Additional required wrapper -->
+                                        <div class="swiper-wrapper">
+                                            <!-- Slides -->
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color active"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                            <a href="#" class="swiper-slide">
+                                                <div class="product-color"></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- new line -->
+                            <div class="buy-price">
+                                <div class="add">
+                                    <button class="add-to" onclick="showToast()">
+                                        <i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart
+                                    </button>
+                                    <button class="wish-list" onclick="toggleFavorite()">
+                                        <i class="fa fa-heart-o" id="wishListIcon" aria-hidden="true"></i>
+                                        Add To Wish list
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="toast" class="toast">
+                                <div class="toast-content">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                    Added Successfully
+                                    <span class="close-btn" onclick="hideToast()">&times;</span>
+                                </div>
+                                <div class="toast-timer" id="toast-timer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Details</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Product
+                    Video</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"> Warranty</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                tabindex="0">
+                <p>Details</p>
+                <p>Ideal for studio, film, TV, and especially location shooting, the 3.57 x 2.6 x 2.6" MOLUS G60 Pocket
+                    COB Monolight from Zhiyun has COB LEDs and boasts a host of professional features in a very small
+                    package. The G60 has a wide variable color
+                    range of 2700 to 6500K with high CRI/TLCI 96/97 ratings and dims from 0 to 100%. Color and
+                    brightness
+                    can be adjusted on the fixture, but you can also make changes wirelessly using Zhiyun's app.</p>
+                <p>
+                    The G60 includes a multi-voltage AC adapter, power adapter organizer bag, and reflector. With the
+                    purchase of an optional USB-C charging cable, you can use PD technology to quickly power an optional
+                    attached battery for wireless use.
+                </p>
+                <p>Zhiyun MOLUS G60 Mini/Pocket COB Light</p>
+                <p>The MOLUS G60 has 60W of power output supported by innovative cooling technology while serving as a
+                    universal film light.</p>
+                <p>Pro Lighting within Your Hand</p>
+                <p>Weighing only 10.6 oz and as small as a Rubik's Cube, the G60 brings you a brand-new lighting
+                    experience without cumbersome burdens.</p>
+
+            </div>
+
+
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                <iframe src="https://www.youtube.com/embed/_8ul_JORgds" title="اعلان تجاري لمنتج - كاميرا سوني a6600"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                <p>14-day return and replacement guarantee against manufacturing defects, and a total warranty 12 months
+                </p>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!--    start sandisk swiper -->
+    <div class=" sandisk container">
+        <div class="swiper-logo  " style=" overflow: hidden;">
+            <hr>
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12a299dab_SANDISK.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12bd4ce5f_BOYA.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a13387d41a_Fancier-.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12a299dab_SANDISK.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12bd4ce5f_BOYA.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12a299dab_SANDISK.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a1389d95f9_LEXAR.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12bd4ce5f_BOYA.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12a299dab_SANDISK.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a1389d95f9_LEXAR.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12bd4ce5f_BOYA.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12a299dab_SANDISK.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a1389d95f9_LEXAR.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12bd4ce5f_BOYA.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12a299dab_SANDISK.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a1389d95f9_LEXAR.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12bd4ce5f_BOYA.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12a299dab_SANDISK.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a1389d95f9_LEXAR.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12a299dab_SANDISK.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a1389d95f9_LEXAR.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a><a href="#" class="swiper-slide">
+                    <img src="./image/sandisk/622a12a299dab_SANDISK.webp" alt="PHOTOGRAPHY LIGHTING" class="sw-logo"
+                        loading="lazy">
+                </a>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <i class=" fa fa-times" data-bs-dismiss="modal" aria-hidden="true"></i>
+                <div class="modal-body">
+                    <h1 class="modal-title" id="exampleModalLabel">Welcome Back!</h1>
+                    <p>Sign Up By Entering These Data</p>
+                </div>
+                <div class="form-cart">
+                    <input type="email" placeholder=" Email ">
+                    <input type="password" placeholder=" Password ">
+                    <button type="button">Login</button>
+                    <a href="#" class="forget-pass" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Forgot
+                        Password?</a>
+                    <a href="#" class="login-with">Login With</a>
+                    <i class="fa fa-google" aria-hidden="true"></i>
+                    <p class="any-mail" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"> Dont
+                        Hav Any Account?<a href="#" class="register-now">Register
+                            Now!</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalToggle2" aria-labelledby="exampleModalToggleLabel2" tabindex="-1"
+        style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <i class=" fa fa-times" data-bs-dismiss="modal" aria-hidden="true"></i>
+                <div class="modal-body-register">
+                    <h1 class="modal-title ">Register With</h1>
+                </div>
+                <div class="form-cart register-page ">
+                    <i class="fa fa-google" aria-hidden="true"></i>
+                    <p>Sign Up By Entering These Data</p>
+
+                    <input type="name" placeholder=" name ">
+                    <input type="email" placeholder=" email ">
+                    <input type="number" placeholder=" phone">
+                    <input type="password" placeholder=" password ">
+                    <input type="password" placeholder=" Retype Password ">
+                    <button type="button">Register</button>
+                    <p class="any-mail">Already have an account?<a href="#" class="register-now"
+                            data-bs-target="#exampleModal" data-bs-toggle="modal"> Login
+                            Now</a> </p </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalToggle3" aria-labelledby="exampleModalToggleLabel3" tabindex="-1"
+        style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <i class=" fa fa-times" data-bs-dismiss="modal" aria-hidden="true"></i>
+                <div class="modal-body">
+                    <h1 class="modal-title ">Forget Password</h1>
+                    <p> Pleas Enter Your Email To Change your Password</p>
+                </div>
+                <div class="form-cart">
+                    <input type="email" placeholder=" Email Address ">
+                    <button type="button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="subscribe">
+            <div class=" img-sub">
+                <div class="main-footer">
+
+                    <div>
+                        <h4>Olbac</h4>
+                        <p>You can contact</p>
+
+                        <p> 010123456789 , 010654589752 </p>
+
+                        <address>
+                            address :- <br>
+                            Administration only: 1 General Street, <br> Corniche Al-Warraq,next to the ring road
+                        </address>
+                        <div class="icon-footer">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                            <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="fast-links">
+                        <h5>Fast Links</h5>
+                        <a href="About-Us.html">About Us</a>
+                        <a href="About-Us.html">Privacy</a>
+                        <a href="About-Us.html">Terms & Conditions</a>
+                        <a href="Contact-Us.html">Contact Us</a>
+                        <a href="About-Us.html">Refund Privacy</a>
+                        <a href="Contact-Us.html">Contact as A Brand Or <br> Seller</a>
+                    </div>
+                    <div class="fast-links">
+                        <h5>News Letter</h5>
+                        <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Login Now !</a>
+                        <a href="" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">New Account</a>
+                        <a href="favorite-shop.html">Favourites</a>
+                        <a href="cart-shop.html">Cart</a>
+                        <a href="Careers.html">Careers</a>
+                    </div>
+                    <div class="fast-links">
+                        <h5>Customer</h5>
+                        <p>Subscribe to get our recent products</p>
+                        <div class="email-container">
+                            <label>
+                                <input type="email" placeholder="Enter Your Email">
+                            </label>
+                            <button type="submit">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="second-footer">
+            <div class="third-footer">
+                <div class="reserved">
+                    <div class="powered">
+                        <h5>Copyrights Reserved © <span> OLBAC </span>2024</h5>
+                        <p>Powered By Paymac.net</p>
+                    </div>
+                    <h5 class="General">This Website Following General Photographic Industry
+                        <img src="./image/Footer/logoweb400.webp" alt="2020" width="130" height="30">
+                    </h5>
+                </div>
+                <div class="footer-logo">
+                    <a href=""><img src="./image/Footer/AnyConv.com__v-cash.webp" alt="v-cash" width="50" height="30"
+                            loading="lazy"></a>
+                    <a href=""><img src="./image/Footer/AnyConv.com__Visa_logo.png.webp" alt="meza" width="50"
+                            height="17" loading="lazy"></a>
+                    <a href=""><img src="./image/Footer/AnyConv.com__Maestro_logo.png.webp" alt="Maestro" width="50"
+                            height="30" loading="lazy"></a>
+                    <a href=""><img src="./image/Footer/AnyConv.com__Visa_logo.png.webp" alt="fawry" width="50"
+                            height="17" loading="lazy"></a>
+                    <a href=""><img src="./image/Footer/AnyConv.com__Maestro_logo.png.webp" alt="visa" width="50"
+                            height="30" loading="lazy"></a>
+                    <a href=""><img src="./image/Footer/AnyConv.com__v-cash.webp" width="50" height="30"
+                            loading="lazy"></a>
+                    <a href=""><img src="./image/Footer/AnyConv.com__w-cash.webp" alt="we-pay" width="50" height="30"
+                            loading="lazy"></a>
+                    <a href=""><img src="./image/Footer/AnyConv.com__w-cash.webp" alt="meza" width="50" height="30"
+                            loading="lazy"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--    end product-details-->
+
+    <script src="./src/main.js" defer></script>
+    <script src="./src/sub-main.js" defer></script>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+</body>
+
+</html>
