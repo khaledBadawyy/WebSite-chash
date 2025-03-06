@@ -214,14 +214,41 @@ document.querySelector(".toggle-coupon").addEventListener("click", function () {
   couponContainer.classList.toggle("open");
 });
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/src/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful');
+if ("serviceWorker" in navigator) {
+  let refreshing = false;
+
+  // Handle service worker updates
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (refreshing) return;
+    refreshing = true;
+    window.location.reload();
+  });
+
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/src/service-worker.js")
+      .then((registration) => {
+        console.log("ServiceWorker registration successful");
+
+        // Check for updates
+        registration.addEventListener("updatefound", () => {
+          const newWorker = registration.installing;
+
+          newWorker.addEventListener("statechange", () => {
+            if (
+              newWorker.state === "installed" &&
+              navigator.serviceWorker.controller
+            ) {
+              // New content is available, reload to activate
+              if (confirm("New version available! Would you like to update?")) {
+                registration.waiting.postMessage("skipWaiting");
+              }
+            }
+          });
+        });
       })
-      .catch(err => {
-        console.log('ServiceWorker registration failed: ', err);
+      .catch((err) => {
+        console.log("ServiceWorker registration failed: ", err);
       });
   });
 }
@@ -231,18 +258,25 @@ function internetConnection() {
     isOnline: navigator.onLine,
     init() {
       this.checkConnection();
-      window.addEventListener('online', () => this.checkConnection());
-      window.addEventListener('offline', () => this.checkConnection());
+      window.addEventListener("online", () => this.checkConnection());
+      window.addEventListener("offline", () => this.checkConnection());
     },
     checkConnection() {
       this.isOnline = navigator.onLine;
-      document.getElementById('modal').style.display = this.isOnline ? 'none' : 'flex';
-      document.getElementById('modal-message').textContent = this.isOnline ? '' : 'You are offline. Please check your internet connection.';
+      const modal = document.getElementById("modal");
+      const modalMessage = document.getElementById("modal-message");
+
+      if (modal && modalMessage) {
+        modal.style.display = this.isOnline ? "none" : "flex";
+        modalMessage.textContent = this.isOnline
+          ? ""
+          : "You are offline. Content is being served from cache.";
+      }
     },
   };
 }
 
-window.onload = () => {
+window.addEventListener("load", () => {
   const connection = internetConnection();
   connection.init();
-};
+});
